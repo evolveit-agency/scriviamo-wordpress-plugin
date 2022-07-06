@@ -37,18 +37,6 @@ require __DIR__ . '/class-devices.php';
 function pluginprefix_activate() { 
  $file = fopen($_SERVER['DOCUMENT_ROOT']."/wp-config.php","r+")  or exit("Unable to open file!");
  
- 
- 
-function generateRandomString($length = 10) {
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $charactersLength = strlen($characters);
-    $randomString = '';
-    for ($i = 0; $i < $length; $i++) {
-        $randomString .= $characters[rand(0, $charactersLength - 1)];
-    }
-    return $randomString;
-}//generateRandomString
- 
 $insertPos=0;  // variable for saving //Users position
 while (!feof($file)) {
     $line=fgets($file);
@@ -62,13 +50,7 @@ while (!feof($file)) {
 
 fseek($file,$insertPos);   // move pointer to the file position where we saved above 
 fwrite($file, $newline);
-
-
-
- //fwrite($file,"define('JWT_AUTH_CORS_ENABLE', true);".PHP_EOL);
- //fwrite($file,"define('JWT_AUTH_SECRET_KEY', '6%gz8{8%BS*Dqi?yJ09-*VmoN5-9h/-6G!jq:fLP[z1}AxsqB8J+Ma-u]zKJ2K32'); ".PHP_EOL);
- 
- fclose($file);
+fclose($file);
 }
 register_activation_hook( __FILE__, 'pluginprefix_activate' );
  
@@ -91,9 +73,6 @@ function handle_preflight() {
         }
     }
 }
-
-
-
 
 
 
