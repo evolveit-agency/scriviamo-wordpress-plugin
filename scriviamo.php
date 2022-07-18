@@ -16,24 +16,10 @@
 
 defined( 'ABSPATH' ) || die( "Can't access directly" );
 
-// Helper constants.
-define( 'JWT_AUTH_PLUGIN_DIR', rtrim( plugin_dir_path( __FILE__ ), '/' ) );
-define( 'JWT_AUTH_PLUGIN_URL', rtrim( plugin_dir_url( __FILE__ ), '/' ) );
-define( 'JWT_AUTH_PLUGIN_VERSION', '2.1.0' );
-
-// Require composer.
-require __DIR__ . '/vendor/autoload.php';
-
-// Require classes.
-require __DIR__ . '/class-auth.php';
-require __DIR__ . '/class-setup.php';
-require __DIR__ . '/class-devices.php';
-
-
- 
  /**
  * Activate the plugin, add essentials
  */
+ /*
 function pluginprefix_activate() { 
  $file = fopen($_SERVER['DOCUMENT_ROOT']."/wp-config.php","r+")  or exit("Unable to open file!");
  
@@ -42,7 +28,7 @@ while (!feof($file)) {
     $line=fgets($file);
     if (strpos($line, "$table_prefix = 'wp_';")!==false) { 
         $insertPos=ftell($file);    // ftell will tell the position where the pointer moved, here is the new line after //Users.
-        $newline =  "/* Add Scriviamo AI Essentials */ define('JWT_AUTH_SECRET_KEY', '".SECURE_AUTH_SALT."'); define('JWT_AUTH_CORS_ENABLE', true);"; 
+        $newline =  " define('JWT_AUTH_SECRET_KEY', '".SECURE_AUTH_SALT."'); define('JWT_AUTH_CORS_ENABLE', true);";
     } else {
         $newline.=$line;   // append existing data with new data of user
     }
@@ -53,7 +39,7 @@ fwrite($file, $newline);
 fclose($file);
 }
 register_activation_hook( __FILE__, 'pluginprefix_activate' );
- 
+ */
  
  
  /**
@@ -75,5 +61,3 @@ function handle_preflight() {
 }
 
 
-
-new JWTAuth\Setup();
