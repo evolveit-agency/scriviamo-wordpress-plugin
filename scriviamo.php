@@ -3,7 +3,7 @@
  * Plugin Name: Scriviamo AI - Wordpress Plugin
  * Plugin URI:  https://scriviamo.ai
  * Description: Scriviamo AI - Wordpress Plugin
- * Version:     1.2.0
+ * Version:     1.0.3
  * Author:      Scriviamo ai
  * Author URI:  https://scriviamo.ai
  * License:     GPL-3.0
