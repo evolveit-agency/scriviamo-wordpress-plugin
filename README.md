@@ -16,4 +16,6 @@ Scriviamo Ai - Wordpress Plugin
 ===
 Scriviamo.ai Official Wordpress Plugin.
 
-### TODO
+## FAQ
+### 403 error with MiniOrange "WordPress REST API Authentication"
+Disable protected REST APIS options on root endpoint.  
