@@ -9,13 +9,16 @@
 </p>
 
 <p align="left">
-  <a href="https://evolveit.agency"><strong><code>Website</code></strong></a>
+  <a href="https://evolveit.agency"><strong><code>Developer Website</code></strong></a>
+</p>
+<p align="left">
+  <a href="https://scriviamo.ai"><strong><code>Project Website</code></strong></a>
 </p>
 
 Scriviamo Ai - Wordpress Plugin
 ===
-Scriviamo.ai Official Wordpress Plugin.
+Scriviamo.ai Official Wordpress Plugin. Connect your site to scriviamo.ai account.
 
 ## FAQ
-### 403 error with MiniOrange "WordPress REST API Authentication"
-Disable protected REST APIS options on root endpoint.  
+### 403 errors
+Please "enable app password" (Required) on your Wordpress installation.
