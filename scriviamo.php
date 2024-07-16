@@ -3,7 +3,7 @@
  * Plugin Name: Scriviamo AI - Wordpress Plugin
  * Plugin URI:  https://scriviamo.ai
  * Description: Scriviamo AI - Wordpress Plugin
- * Version:     1.0.5
+ * Version:     1.0.6
  * Author:      Scriviamo ai
  * Author URI:  https://scriviamo.ai
  * License:     GPL-3.0
@@ -40,3 +40,30 @@ function handle_preflight() {
 }
 
 
+// Enqueue the script for the Gutenberg editor
+function scriviamo_seo_button_enqueue_assets()
+{
+    wp_enqueue_script(
+        'scriviamo-seo-button',
+        plugin_dir_url(__FILE__) . '/assets/scriviamo-seo.js',
+        array('wp-plugins', 'wp-edit-post', 'wp-element', 'wp-components', 'wp-data', 'wp-api-fetch'),
+        filemtime(plugin_dir_path(__FILE__) . '/assets/scriviamo-seo.js')
+    );
+
+    wp_localize_script(
+        'scriviamo-seo-button',
+        'ScriviamoSeoButton',
+        array(
+            'nonce' => wp_create_nonce('wp_rest'),
+            'endpoint' => rest_url('scriviamo-seo-button/v1/update-seo'),
+            'token' => get_option('scriviamo_seo_token', '')
+        )
+    );
+}
+add_action('enqueue_block_editor_assets', 'scriviamo_seo_button_enqueue_assets');
+
+
+//Init settings
+include_once "tools/options.php";
+//Include Tools
+include_once "tools/seo.php";

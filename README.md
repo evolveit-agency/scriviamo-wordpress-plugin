@@ -22,3 +22,6 @@ Scriviamo.ai Official Wordpress Plugin. Connect your site to scriviamo.ai accoun
 ## FAQ
 ### 403 errors
 Please "enable app password" (Required) on your Wordpress installation.
+
+### Seo Generation Errors
+Please enable WP-JSON endpoint api support on your Wordpress.
