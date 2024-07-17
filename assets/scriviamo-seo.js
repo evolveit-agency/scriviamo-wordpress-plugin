@@ -62,10 +62,10 @@ const ScriviamoSEOButton = () => {
             const scriviamoDataDescription = await scriviamoResponseDescription.json();
 
             if(scriviamoDataTitle.message === "Piano non sufficente"){
-                alert("Piano abbonamento di Scriviamo non sufficente per eseguire l'operazione.");
+                alert("Il tuo piano attuale non comprende questo servizio. Per utilizzare il pugin ScrivIAmo SEO devi sottoscrivere l'abbonamento Agency o Custom.");
             }
             if(scriviamoDataDescription.message === "Piano non sufficente"){
-                alert("Piano abbonamento di Scriviamo non sufficente per eseguire l'operazione.");
+                alert("Il tuo piano attuale non comprende questo servizio. Per utilizzare il pugin ScrivIAmo SEO devi sottoscrivere l'abbonamento Agency o Custom.");
             }
 
             console.log("scriviamoDataTitle", scriviamoDataTitle);
